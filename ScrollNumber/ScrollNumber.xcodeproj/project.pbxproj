@@ -14,6 +14,7 @@
 		E4726A461D98D0E5002AA73C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4726A451D98D0E5002AA73C /* Assets.xcassets */; };
 		E4726A491D98D0E5002AA73C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4726A471D98D0E5002AA73C /* LaunchScreen.storyboard */; };
 		E4726A521D98D1A2002AA73C /* NumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4726A511D98D1A2002AA73C /* NumberView.m */; };
+		E4726A551D990587002AA73C /* SingleNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4726A541D990587002AA73C /* SingleNumberView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		E4726A4A1D98D0E5002AA73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4726A501D98D1A2002AA73C /* NumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberView.h; sourceTree = "<group>"; };
 		E4726A511D98D1A2002AA73C /* NumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberView.m; sourceTree = "<group>"; };
+		E4726A531D990587002AA73C /* SingleNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleNumberView.h; sourceTree = "<group>"; };
+		E4726A541D990587002AA73C /* SingleNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleNumberView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 		E4726A381D98D0E5002AA73C /* ScrollNumber */ = {
 			isa = PBXGroup;
 			children = (
+				E4726A531D990587002AA73C /* SingleNumberView.h */,
+				E4726A541D990587002AA73C /* SingleNumberView.m */,
 				E4726A501D98D1A2002AA73C /* NumberView.h */,
 				E4726A511D98D1A2002AA73C /* NumberView.m */,
 				E4726A3C1D98D0E5002AA73C /* AppDelegate.h */,
@@ -157,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4726A411D98D0E5002AA73C /* ViewController.m in Sources */,
+				E4726A551D990587002AA73C /* SingleNumberView.m in Sources */,
 				E4726A3E1D98D0E5002AA73C /* AppDelegate.m in Sources */,
 				E4726A3B1D98D0E5002AA73C /* main.m in Sources */,
 				E4726A521D98D1A2002AA73C /* NumberView.m in Sources */,

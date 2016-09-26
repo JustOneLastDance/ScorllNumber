@@ -10,4 +10,6 @@
 
 @interface NumberView : UIView
 
+- (void)startTimer;
+
 @end

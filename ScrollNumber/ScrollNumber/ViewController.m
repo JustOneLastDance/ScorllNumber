@@ -18,16 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.numberView = [[NumberView alloc] initWithFrame:CGRectMake(100, 100, 20, 40)];
+    self.numberView = [[NumberView alloc] initWithFrame:CGRectMake(50, 100, 120, 30)];
     [self.view addSubview:self.numberView];
-    
-    self.view.backgroundColor = [UIColor blackColor];
-    
+    self.view.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.numberView startTimer];
 }
 
 @end
