@@ -21,6 +21,8 @@
     self.numberView = [[NumberView alloc] initWithFrame:CGRectMake(50, 100, 120, 30)];
     [self.view addSubview:self.numberView];
     self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,7 +31,9 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.numberView.timeSpan = 21;
     [self.numberView startTimer];
+    
 }
 
 @end

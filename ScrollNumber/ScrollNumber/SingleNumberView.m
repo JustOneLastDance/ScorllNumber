@@ -28,6 +28,10 @@
     _currentNumber = currentNumber;
     self.numberOneLabel.text = [NSString stringWithFormat:@"%ld", self.currentNumber];
     self.numberTwoLabel.text = [NSString stringWithFormat:@"%ld", self.currentNumber - 1];
+    
+    if (currentNumber == 0) {
+        self.numberTwoLabel.text = [NSString stringWithFormat:@"%d", 9];
+    }
 }
 
 - (void)pxy_setupUI {

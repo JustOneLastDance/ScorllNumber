@@ -10,6 +10,8 @@
 
 @interface NumberView : UIView
 
+@property (nonatomic, assign) NSInteger timeSpan;
+
 - (void)startTimer;
 
 @end
