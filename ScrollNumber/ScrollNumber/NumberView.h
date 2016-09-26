@@ -10,8 +10,13 @@
 
 @interface NumberView : UIView
 
+/**
+ 倒计时时间
+ */
 @property (nonatomic, assign) NSInteger timeSpan;
-
+/**
+ 开始计时器
+ */
 - (void)startTimer;
 
 @end

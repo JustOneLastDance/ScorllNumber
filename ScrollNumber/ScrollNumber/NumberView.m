@@ -17,6 +17,8 @@
 @property (nonatomic, strong) SingleNumberView *singleNumberTwo;
 @property (nonatomic, strong) UILabel *milliSecLabel;
 @property (nonatomic, weak) NSTimer *timer;
+@property (nonatomic, weak) NSTimer *millisecTimer;
+@property (nonatomic, assign) NSInteger currentMillsec;
 
 @end
 
@@ -26,27 +28,39 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self pxy_setupUI];
+        
+        self.currentMillsec = 99;
     }
     return self;
 }
 
 - (void)setTimeSpan:(NSInteger)timeSpan {
     _timeSpan = timeSpan;
-    
 }
 
 #pragma mark - about timer
 - (void)startTimer {
     self.singleNumberTwo.currentNumber = self.timeSpan % 10;
     self.singleNumberOne.currentNumber = self.timeSpan / 10;
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:TimeSlice target:self selector:@selector(pxy_scrollAnimation) userInfo:nil repeats:true];
-    self.timer = timer;
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    self.milliSecLabel.text = @"99";
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:TimeSlice target:self selector:@selector(pxy_scrollAnimation) userInfo:nil repeats:true];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+    self.millisecTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(pxy_changeMilliSecAnimation) userInfo:nil repeats:true];
+    [[NSRunLoop currentRunLoop] addTimer:self.millisecTimer forMode:NSRunLoopCommonModes];
 }
 
+/**
+ 停止计时器
+ */
 - (void)stopTimer {
     [self.timer invalidate];
     self.timer = nil;
+    
+    [self.millisecTimer invalidate];
+    self.millisecTimer = nil;
+    
+    self.milliSecLabel.text = @"00";
 }
 
 #pragma mark - private function
@@ -55,6 +69,9 @@
     [self addSubview:self.singleNumberOne];
     self.singleNumberTwo = [[SingleNumberView alloc] initWithFrame:CGRectMake(25, 0, 20, 30)];
     [self addSubview:self.singleNumberTwo];
+    
+    self.milliSecLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 30, 30)];
+    [self addSubview:self.milliSecLabel];
 }
 
 /**
@@ -105,6 +122,17 @@
         self.singleNumberOne.currentNumber --;
         self.singleNumberOne.labelGroupView.frame = CGRectMake(0, 0, self.singleNumberOne.frame.size.width, self.singleNumberOne.frame.size.width);
     }];
+}
+
+- (void)pxy_changeMilliSecAnimation {
+    //- todo
+    [UIView animateWithDuration:0.008 animations:^{
+        self.milliSecLabel.text = [NSString stringWithFormat:@"%02ld", self.currentMillsec];
+        if (self.currentMillsec == 0) {
+            self.currentMillsec = 99;
+        }
+    }];
+    self.currentMillsec --;
 }
 
 @end

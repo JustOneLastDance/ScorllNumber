@@ -22,7 +22,6 @@
     [self.view addSubview:self.numberView];
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    
 }
 
 - (void)didReceiveMemoryWarning {
