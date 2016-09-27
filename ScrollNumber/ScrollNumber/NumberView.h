@@ -15,7 +15,7 @@
  */
 @property (nonatomic, assign) NSInteger timeSpan;
 /**
- 开始计时器
+ 开始计时器，数字降为0时自动停止
  */
 - (void)startTimer;
 

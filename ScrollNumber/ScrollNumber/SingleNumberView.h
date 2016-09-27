@@ -10,7 +10,14 @@
 
 @interface SingleNumberView : UIView
 
+/**
+ label组合
+ */
 @property (nonatomic, strong) UIView *labelGroupView;
+
+/**
+ 当前显示的数字
+ */
 @property (nonatomic, assign) NSInteger currentNumber;
 
 @end

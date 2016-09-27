@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.numberView = [[NumberView alloc] initWithFrame:CGRectMake(50, 100, 120, 30)];
+    self.numberView = [[NumberView alloc] initWithFrame:CGRectMake(10, 50, 339, 99)];
     [self.view addSubview:self.numberView];
     self.view.backgroundColor = [UIColor lightGrayColor];
     
@@ -30,7 +30,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.numberView.timeSpan = 21;
+    self.numberView.timeSpan = 29;
     [self.numberView startTimer];
     
 }
