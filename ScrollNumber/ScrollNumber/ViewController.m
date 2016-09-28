@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NumberView *numberView;
 @end
 
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -30,7 +31,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.numberView.timeSpan = 29;
+    self.numberView.timeSpan = 5;
     [self.numberView startTimer];
     
 }

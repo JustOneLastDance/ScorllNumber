@@ -57,14 +57,15 @@
  停止计时器
  */
 - (void)stopTimer {
-    [self.timer invalidate];
-    self.timer = nil;
-    
     [self.millisecTimer invalidate];
     self.millisecTimer = nil;
     
+    [self.timer invalidate];
+    self.timer = nil;
+    
     self.tenMilliSecView.currentNumber = 0;
     self.hundredMilliSecView.currentNumber = 0;
+    
 }
 
 #pragma mark - private function
@@ -115,6 +116,10 @@
         return;
     }
     
+    if (self.timeSpan % 10  == 0) {
+        [self pxy_scrollTenDigitAnimation];
+    }
+    
     [UIView animateWithDuration:0.9 animations:^{
         self.singleNumberTwo.labelGroupView.frame = CGRectMake(0, -self.singleNumberTwo.frame.size.height, self.singleNumberTwo.frame.size.width, self.singleNumberTwo.frame.size.width);
         
@@ -122,9 +127,10 @@
         
         self.singleNumberTwo.currentNumber --;
         
-        if (self.timeSpan % 10  == 0) {
-            [self pxy_scrollTenDigitAnimation];
-        }
+//        if (self.timeSpan % 10  == 0) {
+//            [self pxy_scrollTenDigitAnimation];
+//        }
+        
         self.singleNumberTwo.currentNumber = self.timeSpan % 10;
         
         self.singleNumberTwo.labelGroupView.frame = CGRectMake(0, 0, self.singleNumberTwo.frame.size.width, self.singleNumberTwo.frame.size.width);
